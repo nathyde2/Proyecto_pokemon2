@@ -1,4 +1,4 @@
-let url="https://pokeapi.co/api/v2/ pokemon"
+let url="https://pokeapi.co/api/v2/pokemon"
 const createPokemon= async () => {
     try{
         const res = await fetch(url);
@@ -12,15 +12,27 @@ const createPokemon= async () => {
             const conteiner = document.querySelector('.conteiner');
             let pokeCard = document.createElement('div');
             pokeCard.className = 'pokeCard';
-            pokeCard.innerHTML = 
+            pokeCard.innerHTML = ` 
 
-            <div class = "headerCard">
+             <div class = "headerCard">
                 <p>${dataPokemon.name}</p>
                 <i>
             </div>
+
+            <img class = "imgPoke" src = "${dataPokemon.sprites.other["home"].front_default}">
+
+            <div>
+                 <p>${dataPokemon.base_experience}</p>
+                 <button>Buy</button>
+            </div>
+            `
+            conteiner.appendChild(pokeCard);
+
+            
         
         });
     }catch (error) {
-        alert error
+        alert ("error")
     }
 }
+createPokemon();
