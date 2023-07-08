@@ -27,6 +27,8 @@ const createPokemon= async () => {
             </div>
             `
             conteiner.appendChild(pokeCard);
+            pokeCard.setAttribute("type1",type1);
+            pokeCard.setAttribute("type2",type2);
 
             
         
